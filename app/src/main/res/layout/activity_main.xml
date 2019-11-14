@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:text="Hello World!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvShowPick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="ShowPick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/tvShowCurPick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="ShowCurPick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvShowPick" />
+
+    <LinearLayout
+        android:id="@+id/ll_set_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvShowCurPick">
+
+        <EditText
+            android:id="@+id/et_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Enter your start time"
+            android:background="@android:color/transparent">
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/tv_show_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ShowStart"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_set_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SetStart"
+            android:textSize="16sp"
+            android:layout_marginLeft="12dp">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_set_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_set_start">
+
+        <EditText
+            android:id="@+id/et_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Enter your end time"
+            android:background="@android:color/transparent">
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/tv_show_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ShowEnd"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_set_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SetEnd"
+            android:textSize="16sp"
+            android:layout_marginLeft="12dp">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_picker_space"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="#f2f7fa"
+        android:padding="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_set_end"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:id="@+id/ll_picker_row"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.example.pickviewtest.pickview.LoopView
+                android:id="@+id/picker_meridian_main"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_weight="2"
+                app:textSize="24dp"
+                app:canLoop="false"/>
+
+            <com.example.pickviewtest.pickview.LoopView
+                android:id="@+id/picker_hour_main"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                app:textSize="24dp"
+                app:canLoop="false"/>
+
+            <com.example.pickviewtest.pickview.LoopView
+                android:id="@+id/picker_minute_main"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                app:textSize="24dp"
+                app:canLoop="false"/>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_time_zone"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_picker_space">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <com.example.pickviewtest.pickview.PresetSelectView
+        android:id="@+id/psv_wallbox_select"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="10dp"
+        android:background="#f2f7fa"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_time_zone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
